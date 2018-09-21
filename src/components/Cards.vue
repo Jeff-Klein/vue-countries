@@ -8,7 +8,7 @@
 
         <ul class="clist">
             <li v-for="item in filteredItems"  :key="item.alpha2Code" >
-                <a class="card-link" href="#">
+                <a class="card-link" href="#" @click="viewItemDetails(item)">
                     <article class="blog-card">
                         <img class="post-image" :src="item.flag" />
                         <div class="article-details">
@@ -42,7 +42,7 @@
         computed: {
             filteredItems: function() {
 
-                if (!this.search) 
+                if (!this.search)
                     return this.items;
 
                 let searchValue = this.search;
@@ -51,8 +51,15 @@
       
                 return this.items.filter(filter)
             }
+        },
+        methods: {
+          viewItemDetails: function (item) {
+            console.log(item.name);
+            //this.$router.push('Details');
+            this.$router.push({ name: 'Details', params: { item: item }})
+          }
         }
-    }
+    }    
 </script>
 
 <style>
