@@ -24,13 +24,14 @@
 </script>
 
 <style scoped>
-    detail {
+    .detail {
         position: relative;
         width: 100%;
     }
 
     img {
         padding-top:20px;
+        position: relative;
         width:400px;
         height:280px;
     }
